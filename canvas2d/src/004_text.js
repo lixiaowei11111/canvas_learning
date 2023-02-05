@@ -117,4 +117,42 @@ function useScale() {
   ctx.fillText("MDN", -135, 120);
 }
 
-useScale();
+// useScale();
+
+// 9. transform setTransform
+function useTransform() {
+  const sin = Math.sin(Math.PI / 6);
+  const cos = Math.cos(Math.PI / 6);
+  ctx.translate(100, 100);
+  let c = 0;
+  for (let i = 0; i <= 12; i++) {
+    c = Math.floor((255 / 12) * i);
+    ctx.fillStyle = "rgb(" + c + "," + c + "," + 0 + ")";
+    ctx.fillRect(0, 0, 100, 10);
+    ctx.transform(cos, sin, -sin, cos, 0, 0);
+    // ctx.rotate(Math.PI / 6);
+  }
+  ctx.setTransform(-1, 0, 0, 1, 100, 100);
+  ctx.fillStyle = "rgba(255, 128, 255, 0.5)";
+  ctx.fillRect(0, 50, 100, 100);
+  //1. 模拟translate
+  // ctx.translate(100, 100);
+  // ctx.transform(1, 0, 0, 1, 100, 100);
+  // 2. 模拟scale
+  // ctx.scale(2, 2);
+  // ctx.transform(2, 0, 0, 2, 0, 0);
+  // 3. 模拟 rotate
+  // ctx.translate(100, 100);
+  // ctx.rotate(Math.PI / 4);
+  // ctx.transform(
+  //   Math.cos(Math.PI / 6),
+  //   Math.sin(Math.PI / 6),
+  //   -Math.sin(Math.PI / 6),
+  //   Math.cos(Math.PI / 6),
+  //   100,
+  //   100
+  // );
+  // ctx.fillRect(0, 0, 100, 10);
+}
+
+useTransform();
