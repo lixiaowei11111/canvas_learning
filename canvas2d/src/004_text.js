@@ -155,4 +155,12 @@ function useTransform() {
   // ctx.fillRect(0, 0, 100, 10);
 }
 
-useTransform();
+// useTransform();
+
+// 10. 实现skew 斜切
+function useSkew() {
+  ctx.transform(1, 0, Math.PI / 4, 1, 0, 0);
+  ctx.fillRect(100, 100, 50, 10);
+}
+
+// useSkew();
