@@ -166,39 +166,76 @@ function useClip() {
 function handleDrawStart() {
   const angle = Math.PI / 180;
   ctx.beginPath();
-  ctx.lineWidth = 1;
+  ctx.lineWidth = 100;
   ctx.translate(100, 100);
-  ctx.moveTo(20, 0);
+  ctx.moveTo(0, 0);
 
-  ctx.rotate(Math.PI / 5);
-  ctx.lineTo(4, 0);
+  // ctx.rotate(Math.PI / 2);
+  // ctx.translate(200, 200);
+  ctx.lineTo(100, 100);
 
-  ctx.rotate(Math.PI / 5);
-  ctx.lineTo(20, 0);
+  // ctx.rotate(Math.PI / 5);
+  // ctx.lineTo(20, 0);
 
-  ctx.rotate(Math.PI / 5);
-  ctx.lineTo(4, 0);
+  // ctx.rotate(Math.PI / 5);
+  // ctx.lineTo(4, 0);
 
-  ctx.rotate(Math.PI / 5);
-  ctx.lineTo(20, 0);
+  // ctx.rotate(Math.PI / 5);
+  // ctx.lineTo(20, 0);
 
-  ctx.rotate(Math.PI / 5);
-  ctx.lineTo(4, 0);
+  // ctx.rotate(Math.PI / 5);
+  // ctx.lineTo(4, 0);
 
-  ctx.rotate(Math.PI / 5);
-  ctx.lineTo(20, 0);
+  // ctx.rotate(Math.PI / 5);
+  // ctx.lineTo(20, 0);
 
-  ctx.rotate(Math.PI / 5);
-  ctx.lineTo(4, 0);
+  // ctx.rotate(Math.PI / 5);
+  // ctx.lineTo(4, 0);
 
-  ctx.rotate(Math.PI / 5);
-  ctx.lineTo(20, 0);
+  // ctx.rotate(Math.PI / 5);
+  // ctx.lineTo(20, 0);
 
-  ctx.rotate(Math.PI / 5);
-  ctx.lineTo(4, 0);
+  // ctx.rotate(Math.PI / 5);
+  // ctx.lineTo(4, 0);
 
-  ctx.fill();
+  ctx.stroke();
   ctx.closePath();
 }
 
-handleDrawStart();
+// handleDrawStart();
+
+// 创建一个出ImageData对象
+function createImageDataFunc() {
+  const imgData = new ImageData(1, 1);
+  console.log(imgData);
+}
+
+// createImageDataFunc();
+
+// 使用 getImageData() 获取 canvas上的数据
+
+function useGetImageData() {
+  ctx.fillStyle = "#bfa";
+  ctx.fillRect(0, 0, 200, 200);
+  console.log(ctx.getImageData(122, 122, 1, 1), "未超出");
+  console.log(ctx.getImageData(800, 800, 1, 1), "超出");
+}
+
+// useGetImageData();
+
+function usePutImageData() {
+  ctx.save();
+  ctx.translate(100, 100);
+  ctx.fillStyle = "#bfa";
+  ctx.fillRect(0, 0, 50, 120);
+  ctx.rotate((Math.PI / 180) * -30);
+  ctx.fillStyle = "blue";
+  ctx.fillRect(0, 0, 50, 120);
+  ctx.restore();
+  const imgData = ctx.getImageData(100 + 50, 100 + 50, 50, 50);
+  ctx.putImageData(imgData, 300, 150);
+  ctx.strokeStyle = "red";
+  ctx.strokeRect(100, 100, 50, 50);
+}
+
+usePutImageData();
