@@ -34,3 +34,5 @@
 + 比如说 `setInterval` 、 `setTimeout` 和 `requestAnimationFrame()`
 
 + 这三个方法： `window.setInterval()` 、`window.setTimeout()` 和 `window.requestAnimationFrame()` 都可以定时的回调第一个方法
+
+
