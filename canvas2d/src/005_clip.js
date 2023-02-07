@@ -238,4 +238,4 @@ function usePutImageData() {
   ctx.strokeRect(100, 100, 50, 50);
 }
 
-usePutImageData();
+// usePutImageData();
